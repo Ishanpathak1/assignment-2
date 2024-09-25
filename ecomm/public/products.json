@@ -1,0 +1,73 @@
+[
+    {
+        "id": 1,
+        "name": "iPhone 14",
+        "description": "The latest iPhone with advanced camera features.",
+        "price": 799.99,
+        "image": "https://example.com/images/iphone14.jpg"
+    },
+    {
+        "id": 2,
+        "name": "iPhone 14 Pro",
+        "description": "Professional-grade features with ProMotion display.",
+        "price": 999.99,
+        "image": "https://example.com/images/iphone14pro.jpg"
+    },
+    {
+        "id": 3,
+        "name": "iPhone 14 Pro Max",
+        "description": "The largest and most advanced iPhone with impressive battery life.",
+        "price": 1099.99,
+        "image": "https://example.com/images/iphone14promax.jpg"
+    },
+    {
+        "id": 4,
+        "name": "iPhone 15",
+        "description": "The iPhone 15 features a sleek design and upgraded camera capabilities.",
+        "price": 799.99,
+        "image": "https://example.com/images/iphone15.jpg"
+    },
+    {
+        "id": 5,
+        "name": "iPhone 15 Plus",
+        "description": "A bigger display and longer battery life for the iPhone 15 experience.",
+        "price": 899.99,
+        "image": "https://example.com/images/iphone15plus.jpg"
+    },
+    {
+        "id": 6,
+        "name": "iPhone 15 Pro",
+        "description": "Premium features with a titanium frame and advanced camera technology.",
+        "price": 999.99,
+        "image": "https://example.com/images/iphone15pro.jpg"
+    },
+    {
+        "id": 7,
+        "name": "iPhone 15 Pro Max",
+        "description": "The ultimate iPhone with the largest screen and best performance.",
+        "price": 1199.99,
+        "image": "https://example.com/images/iphone15promax.jpg"
+    },
+    {
+        "id": 8,
+        "name": "iPad Air (5th Gen)",
+        "description": "The iPad Air is light, powerful, and perfect for everything.",
+        "price": 599.99,
+        "image": "https://example.com/images/ipadair.jpg"
+    },
+    {
+        "id": 9,
+        "name": "iPad Pro (11-inch)",
+        "description": "The most powerful iPad with M1 chip.",
+        "price": 1099.99,
+        "image": "https://example.com/images/ipadpro.jpg"
+    },
+    {
+        "id": 10,
+        "name": "iPad Pro (12.9-inch)",
+        "description": "The largest iPad with advanced features for professional use.",
+        "price": 1299.99,
+        "image": "https://example.com/images/ipadpro129.jpg"
+    }
+]
+
