@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const ProductList = () => {
+const ProductList = ({ addToCart }) => {
     
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -27,6 +27,7 @@ const ProductList = () => {
                             <p>{product.description}</p>
                             <p>Price: ${product.price.toFixed(2)}</p>
                             <img src={product.image} alt={product.name} style={{ width: '200px', height: 'auto' }} />
+                            <button onClick={() => addToCart(product)}>Add to Cart</button>
                         </Link>
                     </li>
                 ))}
