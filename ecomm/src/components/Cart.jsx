@@ -7,11 +7,7 @@ const Cart = ({ cartItems, updateCartItemNumber, removeFromCart, moveToWishlist 
         return cartItems.reduce((total, item) => total + item.price * item.number, 0).toFixed(2);
     };
 
-    // Handle change in item quantity
-    const handleNumberChange = (itemId, newNumber) => {
-        if (newNumber <= 0) return; // prevent negative or zero quantities
-        updateCartItemNumber(itemId, newNumber);
-    };
+    
 
     return (
         <div>
@@ -32,7 +28,7 @@ const Cart = ({ cartItems, updateCartItemNumber, removeFromCart, moveToWishlist 
                                             type="number" 
                                             value={item.quantity} 
                                             min="1" 
-                                            onChange={(e) => handleNumberChange(item.id, parseInt(e.target.value))}
+                                            
                                         />
                                     </p>
                                     <button onClick={() => removeFromCart(item.id)}>Remove from Cart</button>

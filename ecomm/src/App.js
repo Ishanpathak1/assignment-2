@@ -4,65 +4,60 @@ import ProductList from './components/ProductList';
 import ProductDescription from './components/ProductDescription';
 import Cart from './components/Cart';
 import Wishlist from './components/Wishlist';
+import Navbar from './components/Navbar';
 
-const App = () => {
+function App() {
+    // State to store items added to the cart
     const [cartItems, setCartItems] = useState([]);
     const [wishlistItems, setWishlistItems] = useState([]);
 
-    // Function to add product to the cart
+    // Function to add products to the cart
     const addToCart = (product) => {
-        setCartItems((prevItems) => [...prevItems, product]);
-        // Optionally remove from wishlist if it's in the wishlist
-        setWishlistItems((prevItems) => prevItems.filter((item) => item.id !== product.id));
+        setCartItems((prevItems) => [...prevItems, product]);  // Update the cart state
+        console.log('Cart Items:', cartItems);  // Log cart items to check if they are updating
     };
 
-    // Function to add product to the wishlist
+    // Function to add products to the wishlist
     const addToWishlist = (product) => {
         setWishlistItems((prevItems) => [...prevItems, product]);
-    };
-
-    // Function to remove product from the wishlist
-    const removeFromWishlist = (product) => {
-        setWishlistItems((prevItems) => prevItems.filter((item) => item.id !== product.id));
-    };
-
-    // Function to move product from wishlist to cart
-    const moveToCart = (product) => {
-        addToCart(product); // This will also remove from wishlist automatically
     };
 
     return (
         <Router>
             <div>
+              <Navbar></Navbar>
                 <Routes>
-                    <Route path="/" element={<ProductList />} />
-                    <Route
-                        path="/product/:id"
-                        element={
-                            <ProductDescription
-                                addToCart={addToCart}
-                                addToWishlist={addToWishlist}
-                            />
-                        }
+                    {/* Route for Product List */}
+                    <Route 
+                        path="/" 
+                        element={<ProductList addToCart={addToCart} />} 
                     />
+
+                    {/* Route for Product Description - pass addToCart */}
+                    <Route 
+                        path="/product/:id" 
+                        element={
+                            <ProductDescription 
+                                addToCart={addToCart} 
+                                addToWishlist={addToWishlist} 
+                            />
+                        } 
+                    />
+
+                    {/* Route for Cart */}
                     <Route path="/cart" element={<Cart cartItems={cartItems} />} />
-                    <Route
-                        path="/wishlist"
-                        element={
-                            <Wishlist
-                                wishlistItems={wishlistItems}
-                                removeFromWishlist={removeFromWishlist}
-                                moveToCart={moveToCart}
-                            />
-                        }
-                    />
+
+                    {/* Route for Wishlist */}
+                    <Route path="/wishlist" element={<Wishlist wishlistItems={wishlistItems} />} />
                 </Routes>
             </div>
         </Router>
     );
-};
+}
 
 export default App;
+
+
 
 
 
