@@ -27,6 +27,14 @@ function App() {
         }
     };
 
+    // Add item to wishlist
+    const addToWishlist = (product) => {
+        const existingItem = wishlistItems.find((item) => item.id === product.id);
+        if (!existingItem) {
+            setWishlistItems([...wishlistItems, product]); // Add product to wishlist if not already present
+        }
+    };
+
     // Update the number of items in the cart
     const updateCartItemNumber = (itemId, newQuantity) => {
         setCartItems(
@@ -50,13 +58,17 @@ function App() {
         }
     };
 
+    // Calculate total cart quantity
+    const totalCartQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
     return (
         <Router>
             <div>
-              <Navbar></Navbar>
+                {/* Pass totalCartQuantity to Navbar */}
+                <Navbar cartQuantity={totalCartQuantity} />
                 <Routes>
                     <Route path="/" element={<ProductList addToCart={addToCart} />} />
-                    <Route path="/product/:id" element={<ProductDescription addToCart={addToCart} />} />
+                    <Route path="/product/:id" element={<ProductDescription addToCart={addToCart} addToWishlist={addToWishlist} />} />
                     <Route
                         path="/cart"
                         element={
@@ -79,6 +91,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 

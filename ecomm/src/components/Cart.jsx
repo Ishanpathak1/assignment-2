@@ -1,70 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import '../style.css'
 
 const Cart = ({ cartItems, updateCartItemNumber, removeFromCart, moveToWishlist }) => {
+    const [totalPrice, setTotalPrice] = useState(0);
 
-    //Tried Using the math Lib, but was not able to update, found out that you cannot use that when you want to "reduce", in one value, you have to use reduce only.
-    const calculateTotal = () => {
-        return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
-    };
+    useEffect(() => {
+        const calculateTotal = () => {
+            const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            setTotalPrice(total);
+        };
 
-    
+        calculateTotal();
+    }, [cartItems]);
+
     const handleQuantityChange = (itemId, newQuantity) => {
-        if (newQuantity <= 0) return; 
+        if (newQuantity <= 0) return;
         updateCartItemNumber(itemId, newQuantity);
-    };
-
-    
-    const handleBuyNow = () => {
-        alert("Proceed to buy the selected items");
-        
-    };
-
-    
-    const handleCheckout = () => {
-        alert("Proceeding to checkout...");
-        
     };
 
     return (
         <div>
-            <h2>Your Cart</h2>
+            <h2 className="CartTitle">Your Cart</h2>
             {cartItems.length === 0 ? (
-                <p>Your cart is empty.</p>
+                <p className="CartSubtitle">Your cart is empty.</p>
             ) : (
                 <div>
-                    <ul style={{ listStyleType: 'none', padding: 0 }}>
+                    <ul className="CartList">
                         {cartItems.map(item => (
-                            <li key={item.id} style={{ marginBottom: '20px', border: '1px solid #ddd', padding: '10px', borderRadius: '5px' }}>
-                                <div style={{ display: 'flex', alignItems: 'center' }}>
-                                    <img src={item.image} alt={item.name} style={{ width: '100px', height: 'auto', marginRight: '20px' }} />
+                            <li className="CartListItem" key={item.id}>
+                                <div className="CartItem">
+                                    <img className="ImagesCart" src={item.image} alt={item.name} />
                                     <div>
-                                        <h4>{item.name}</h4>
+                                        <h4 className="CartItemName">{item.name}</h4>
                                         <p>Price: ${item.price.toFixed(2)}</p>
                                         <p>
                                             Quantity: 
-                                            <input 
-                                                type="number" 
-                                                value={item.quantity} 
-                                                min="1" 
+                                            <input
+                                                className="CartInputQuantity"
+                                                type="number"
+                                                value={item.quantity}
+                                                min="1"
                                                 onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value))}
-                                                style={{ marginLeft: '10px', width: '50px' }}
                                             />
                                         </p>
-                                        <div style={{ marginTop: '10px' }}>
-                                            <button onClick={() => removeFromCart(item.id)} style={{ marginRight: '10px', background: '#ff4d4d', border: 'none', padding: '5px 10px', color: '#fff' }}>Remove</button>
-                                            <button onClick={() => moveToWishlist(item.id)} style={{ background: '#ffbf00', border: 'none', padding: '5px 10px', color: '#fff' }}>Move to Wishlist</button>
+                                        <div className="CartActions">
+                                            <button className="RemoveButton" onClick={() => removeFromCart(item.id)}>Remove</button>
+                                            <button className="MoveToWishlistButton" onClick={() => moveToWishlist(item.id)}>Move to Wishlist</button>
                                         </div>
                                     </div>
                                 </div>
                             </li>
                         ))}
                     </ul>
-                    <h3>Total: ${calculateTotal()}</h3>
-
-                    <div style={{ marginTop: '20px' }}>
-                        <button onClick={handleBuyNow} style={{ marginRight: '10px', background: '#4CAF50', border: 'none', padding: '10px 20px', color: '#fff' }}>Buy Now</button>
-                        <button onClick={handleCheckout} style={{ background: '#2196F3', border: 'none', padding: '10px 20px', color: '#fff' }}>Checkout</button>
-                    </div>
+                    <h3>Total: ${totalPrice.toFixed(2)}</h3>
                 </div>
             )}
         </div>
@@ -72,4 +60,6 @@ const Cart = ({ cartItems, updateCartItemNumber, removeFromCart, moveToWishlist 
 };
 
 export default Cart;
+
+
 
