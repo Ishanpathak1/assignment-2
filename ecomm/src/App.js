@@ -18,12 +18,12 @@ function App() {
             setCartItems(
                 cartItems.map((item) =>
                     item.id === product.id
-                        ? { ...item, quantity: item.quantity + 1 } 
+                        ? { ...item, quantity: item.quantity + 1 }
                         : item
                 )
             );
         } else {
-            setCartItems([...cartItems, { ...product, quantity: 1 }]); 
+            setCartItems([...cartItems, { ...product, quantity: 1 }]);
         }
     };
 
@@ -58,17 +58,33 @@ function App() {
         }
     };
 
+    // Remove item from wishlist
+    const removeFromWishlist = (itemId) => {
+        setWishlistItems(wishlistItems.filter((item) => item.id !== itemId));
+    };
+
+    // Move item from wishlist to cart
+    const moveToCart = (itemId) => {
+        const itemToMove = wishlistItems.find((item) => item.id === itemId);
+        if (itemToMove) {
+            addToCart(itemToMove); // Use the existing addToCart function to add to cart
+            removeFromWishlist(itemId); // Then remove from wishlist
+        }
+    };
+
     // Calculate total cart quantity
     const totalCartQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
     return (
         <Router>
             <div>
-                
                 <Navbar cartQuantity={totalCartQuantity} />
                 <Routes>
                     <Route path="/" element={<ProductList addToCart={addToCart} />} />
-                    <Route path="/product/:id" element={<ProductDescription addToCart={addToCart} addToWishlist={addToWishlist} />} />
+                    <Route
+                        path="/product/:id"
+                        element={<ProductDescription addToCart={addToCart} addToWishlist={addToWishlist} />}
+                    />
                     <Route
                         path="/cart"
                         element={
@@ -82,7 +98,13 @@ function App() {
                     />
                     <Route
                         path="/wishlist"
-                        element={<Wishlist wishlistItems={wishlistItems} />}
+                        element={
+                            <Wishlist
+                                wishlistItems={wishlistItems}
+                                moveToCart={moveToCart}
+                                removeFromWishlist={removeFromWishlist}
+                            />
+                        }
                     />
                 </Routes>
             </div>
@@ -91,6 +113,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
