@@ -22,7 +22,7 @@ This project is a simple e-commerce application built using **React**. It allows
 - Responsive design
 
 ## Demo
-[https://ecomm-rhnshwsan-ishan-pathaks-projects.vercel.app/]
+[https://ecomm-mu-three.vercel.app/]
 
 ## Getting Started
 
