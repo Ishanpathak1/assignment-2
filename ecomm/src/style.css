@@ -1,4 +1,16 @@
-/*Took CSS from the FIGMA*/
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
 /*Wishlist file*/
 .wishlistFrame {
     padding: 20px;
@@ -259,6 +271,7 @@ img {
 }
 
 /*Product List Page*/
+/* General styling for the title */
 .titleIphone {
     font-size: 24px;
     font-weight: bold;
@@ -267,67 +280,68 @@ img {
     color: #333;
 }
 
+/* Styling for the product list container */
 ul {
     list-style-type: none;
     padding: 0;
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
     gap: 20px;
-    max-width: 1200px;
+    justify-content: center;
 }
 
-/*Made responsive using GPT*/
-@media screen and (max-width: 1200px) {
-    ul {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
-    }
-}
-
-@media screen and (max-width: 768px) {
-    ul {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    ul {
-        grid-template-columns: 1fr; /* 1 column for very small screens */
-    }
-}
-
+/* Styling for each product item in the list */
 .productToList {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
-    transition: box-shadow 0.3s ease;
     text-align: center;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.productToList:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for the product card container */
 .productCard {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    height: 100%;
 }
 
+/* Styling for the product link */
+.ProductLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.ProductLink:hover {
+    text-decoration: none;
+}
+
+/* Styling for the product name */
 .productName {
     font-size: 18px;
     margin-bottom: 10px;
     color: #333;
 }
 
+/* Styling for the product description */
 .productDescription {
     font-size: 14px;
     color: #777;
     margin-bottom: 10px;
 }
 
+/* Styling for the product image */
 .productImage {
     display: block;
-    margin: 10px auto;
-    width: 100%;
+    margin: 0 auto 20px;
+    max-width: 100%;
     height: auto;
     border-radius: 5px;
     transition: transform 0.3s ease;
@@ -337,6 +351,7 @@ ul {
     transform: scale(1.05);
 }
 
+/* Button styling */
 .buttonAddtocart {
     background-color: #4CAF50;
     color: white;
@@ -345,20 +360,13 @@ ul {
     border-radius: 5px;
     font-size: 14px;
     cursor: pointer;
-    margin-top: 10px;
-    width: 100%;
+    margin-top: auto;
     transition: background-color 0.3s ease;
+    width: 100%;
 }
 
 .buttonAddtocart:hover {
     background-color: #45a049;
-}
-
-/* Styling for the link that wraps the product */
-.productLink {
-    text-decoration: none;
-    color: inherit;
-    width: 100%;
 }
 
 .productNameDes {
@@ -379,7 +387,7 @@ ul {
     
 }
 
-.ProductDes {
+.productDes {
     font-size: 16px;
     color: #555;
     margin-bottom: 20px;
