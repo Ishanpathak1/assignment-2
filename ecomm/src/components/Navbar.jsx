@@ -4,17 +4,17 @@ import '../style.css';
 
 const Navbar = ({ cartQuantity }) => {
     return (
-        <nav className='NavBar'>
+        <nav className='navbar'>
             <ul>
-                <li className='ProductList'>
+                <li className='productList'>
                     <Link to="/">Product List</Link>
                 </li>
-                <li className='Cart'>
+                <li className='cart'>
                     <Link to="/cart">
                         Cart {cartQuantity > 0 && `(${cartQuantity})`} {/* Display cart quantity if greater than 0 */}
                     </Link>
                 </li>
-                <li className='Wishlist'>
+                <li className='wishlist'>
                     <Link to="/wishlist">Wishlist</Link>
                 </li>
             </ul>

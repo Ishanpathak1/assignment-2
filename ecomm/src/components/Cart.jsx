@@ -20,39 +20,39 @@ const Cart = ({ cartItems, updateCartItemNumber, removeFromCart, moveToWishlist 
 
     return (
         <div>
-            <h2 className="CartTitle">Your Cart</h2>
+            <h2 className="cartTitle">Your Cart</h2>
             {cartItems.length === 0 ? (
-                <p className="CartSubtitle">Your cart is empty.</p>
+                <p className="cartSubtitle">Your cart is empty.</p>
             ) : (
                 <div>
-                    <ul className="CartList">
+                    <ul className="cartList">
                         {cartItems.map(item => (
-                            <li className="CartListItem" key={item.id}>
-                                <div className="CartItem">
-                                    <img className="ImagesCart" src={item.image} alt={item.name} />
+                            <li className="cartListItem" key={item.id}>
+                                <div className="cartItem">
+                                    <img className="imagesCart" src={item.image} alt={item.name} />
                                     <div>
-                                        <h4 className="CartItemName">{item.name}</h4>
+                                        <h4 className="cartItemName">{item.name}</h4>
                                         <p>Price: ${item.price.toFixed(2)}</p>
                                         <p>
                                             Quantity: 
                                             <input
-                                                className="CartInputQuantity"
+                                                className="cartInputQuantity"
                                                 type="number"
                                                 value={item.quantity}
                                                 min="1"
                                                 onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value))}
                                             />
                                         </p>
-                                        <div className="CartActions">
-                                            <button className="RemoveButton" onClick={() => removeFromCart(item.id)}>Remove</button>
-                                            <button className="MoveToWishlistButton" onClick={() => moveToWishlist(item.id)}>Move to Wishlist</button>
+                                        <div className="cartActions">
+                                            <button className="removeButton" onClick={() => removeFromCart(item.id)}>Remove</button>
+                                            <button className="moveToWishlistButton" onClick={() => moveToWishlist(item.id)}>Move to Wishlist</button>
                                         </div>
                                     </div>
                                 </div>
                             </li>
                         ))}
                     </ul>
-                    <h3>Total: ${totalPrice.toFixed(2)}</h3>
+                    <h3 className='totalAmount'>Total: ${totalPrice.toFixed(2)}</h3>
                 </div>
             )}
         </div>

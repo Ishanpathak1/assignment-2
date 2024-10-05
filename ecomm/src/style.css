@@ -1,0 +1,439 @@
+/*Took CSS from the FIGMA*/
+/*Wishlist file*/
+.wishlistFrame {
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+img {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Item name and price styling */
+.itemName {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.itemPrice {
+    font-size: 14px;
+    color: #555;
+}
+
+
+.moveToCart,
+.removeWishlist {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+.moveToCart:hover,
+.removeWishlist:hover {
+    background-color: #ccc;
+}
+
+.backToProduct {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ddd;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+}
+
+.backToProduct:hover {
+    background-color: #ccc;
+}
+
+.backToProduct a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Cart file */
+.cartTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.cartSubtitle {
+    font-size: 18px;
+    color: #777;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cartList {
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.cartListItem {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; 
+    width: 100%;
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 20px;
+}
+
+.imagesCart {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add slight shadow to the image */
+}
+
+.cartItemName {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.cartInputQuantity {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.cartActions {
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+    align-items: flex-end; /* Align to the right */
+    gap: 10px;
+}
+
+.removeButton {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 150px;
+}
+
+.removeButton:hover {
+    background-color: #e63939;
+}
+
+/* Move to wishlist button styling */
+.MoveToWishlistButton {
+    background-color: #ffbf00;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 150px;
+}
+
+.MoveToWishlistButton:hover {
+    background-color: #e6a800;
+}
+
+/* Center the total amount and improve its appearance */
+.CartTotal {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.TotalAmount {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.TotalAmount span {
+    margin-left: 5px;
+}
+
+/* Navbar component */
+.navbar {
+    background-color: #333; /* Dark background */
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+.navbar a:hover {
+    background-color: #575757; 
+}
+
+.productList a,
+.cart a,
+.wishlist a {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*Product List Page*/
+.titleIphone {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    max-width: 1200px;
+}
+
+/*Made responsive using GPT*/
+@media screen and (max-width: 1200px) {
+    ul {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    ul {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    ul {
+        grid-template-columns: 1fr; /* 1 column for very small screens */
+    }
+}
+
+.productToList {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.productCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.productName {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.productDescription {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.productImage {
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.productImage:hover {
+    transform: scale(1.05);
+}
+
+.buttonAddtocart {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.buttonAddtocart:hover {
+    background-color: #45a049;
+}
+
+/* Styling for the link that wraps the product */
+.productLink {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.productNameDes {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.productImageDes {
+    display: block;
+    margin: 0 auto 20px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    
+}
+
+.ProductDes {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.priceDes {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.buttonContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addToCartDes {
+    background-color: #4CAF50;
+}
+
+.addToCartDes:hover {
+    background-color: #45a049;
+}
+
+
+.addToWishlistDes {
+    background-color: #ffbf00; 
+}
+
+.addToWishlistDes:hover {
+    background-color: #e6a800;
+}
+
+
+
+
+
+
+
+

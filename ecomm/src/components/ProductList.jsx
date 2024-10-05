@@ -3,15 +3,13 @@ import { Link } from 'react-router-dom';
 import '../style.css'
 
 const ProductList = ({ addToCart }) => {
-    
+
     const [products, setProducts] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            
-                const response = await fetch('/products.json'); 
-                const data = await response.json();
-                setProducts(data); 
-            
+            const response = await fetch('/products.json'); 
+            const data = await response.json();
+            setProducts(data); 
         };
 
         fetchData();
@@ -19,18 +17,19 @@ const ProductList = ({ addToCart }) => {
 
     return (
         <div>
-            <h2 className='TitleIphone'>Available iPhones and iPads</h2>
+            <h2 className='titleIphone'>Available iPhones and iPads</h2>
             <ul>
                 {products.map(product => (
-                    <li className='ProducttoList'key={product.id} style={{ marginBottom: '20px' }}>
-                        <Link to={`/product/${product.id}`}>
-                            <h3 className='ProductName'>{product.name}</h3>
-                            <p className='ProductDescription'>{product.description}</p>
-                            <p>Price: ${product.price.toFixed(2)}</p>
-                            <img className='ProductImage' src={product.image} alt={product.name} style={{ width: '200px', height: 'auto' }} />
-                             
-                        </Link>
-                        <button className='ButtonAddtocart' onClick={() => addToCart(product)}>Add to Cart</button>
+                    <li className='productToList' key={product.id}>
+                        <div className="productCard">
+                            <Link to={`/product/${product.id}`} className="ProductLink">
+                                <h3 className='productName'>{product.name}</h3>
+                                <p className='productDescription'>{product.description}</p>
+                                <p>Price: ${product.price.toFixed(2)}</p>
+                                <img className='productImage' src={product.image} alt={product.name} style={{ width: '200px', height: 'auto' }} />
+                            </Link>
+                            <button className='buttonAddtocart' onClick={() => addToCart(product)}>Add to Cart</button>
+                        </div>
                     </li>
                 ))}
             </ul>
@@ -39,3 +38,4 @@ const ProductList = ({ addToCart }) => {
 };
 
 export default ProductList;
+
