@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+# Ecomm - E-commerce Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple e-commerce application built using **React**. It allows users to browse a list of products, view product details, add products to a cart, and manage a wishlist. The app features basic functionality such as adding products to the cart, updating quantities, moving items to and from the wishlist, and removing items.
 
-## Available Scripts
+## Table of Contents
+- [Features](#features)
+- [Demo](#demo)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+- [Contributing](#contributing)
 
-In the project directory, you can run:
+## Features
+- Display a list of products (iPhones and iPads)
+- View product details for each item
+- Add products to the shopping cart and wishlist
+- Update product quantities in the cart
+- Move items between the cart and wishlist
+- Remove items from the cart or wishlist
+- Display the total price of items in the cart
+- Responsive design
 
-### `npm start`
+## Demo
+[https://ecomm-rhnshwsan-ishan-pathaks-projects.vercel.app/]
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
+To run this project locally, you need the following installed:
+- [Node.js](https://nodejs.org/en/) (v12 or higher)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 
-### `npm test`
+### Installation
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/ecomm.git
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Navigate to the project directory**:
+   ```bash
+   cd ecomm
+   ```
 
-### `npm run build`
+3. **Install dependencies**:
+   ```bash
+   npm install
+   # or if using Yarn
+   yarn install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Run the application**:
+   ```bash
+   npm start
+   # or if using Yarn
+   yarn start
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. **Open the application in your browser**:
+   The app will be running at `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Structure
 
-### `npm run eject`
+```
+ecomm/
+│
+├── public/
+│   ├── index.html         # HTML template
+│   ├── products.json       # Sample product data (iPhones, iPads, etc.)
+│
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx      # Navigation bar component
+│   │   ├── ProductList.jsx # Product list component
+│   │   ├── ProductDescription.jsx # Product detail component
+│   │   ├── Cart.jsx        # Cart component
+│   │   ├── Wishlist.jsx    # Wishlist component
+│   │
+│   ├── App.js              # Main application component
+│   ├── index.js            # Application entry point
+│   ├── style.css           # Global styles for the application
+│
+├── .gitignore
+├── README.md               # Project readme file
+├── package.json            # Project dependencies and scripts
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Main Components:
+1. **Navbar**: Provides navigation links for the product list, cart, and wishlist.
+2. **ProductList**: Displays all available products with options to view details or add to the cart.
+3. **ProductDescription**: Shows detailed information about a selected product.
+4. **Cart**: Displays items in the cart with options to update quantities, move items to the wishlist, or remove them.
+5. **Wishlist**: Shows items in the wishlist with options to move them to the cart or remove them.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Adding Items to Cart
+- From the **Product List** page, click the "Add to Cart" button on any product to add it to your cart.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Viewing the Cart
+- Click on the **Cart** link in the navigation bar to view the items in your cart. You can update item quantities, remove items, or move them to the wishlist.
 
-## Learn More
+### Wishlist Management
+- From the **Product Description** page, you can add items to the **Wishlist**.
+- Go to the **Wishlist** via the navigation bar to view the items, move them to the cart, or remove them from the wishlist.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Calculating Total Price
+- The total price of items in your cart is automatically calculated and displayed in the cart.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Moving Items Between Cart and Wishlist
+- You can move items between the cart and wishlist using the provided buttons in both the cart and wishlist views.
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Issues and Suggestions
+Feel free to submit issues or feature requests via the [issue tracker](https://github.com/your-username/ecomm/issues).
 
-### Analyzing the Bundle Size
+### Pull Requests
+1. Fork the project.
+2. Create your feature branch:
+   ```bash
+   git checkout -b feature/my-new-feature
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/my-new-feature
+   ```
+5. Open a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
